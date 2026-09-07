@@ -25,7 +25,7 @@ export default function Header() {
             <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-rose-100">
               <Image
                 src="/logo.jpg"
-                alt="Dulce Antojo"
+                alt="El Dulce Antojo"
                 fill
                 className="object-cover"
                 priority
@@ -33,7 +33,7 @@ export default function Header() {
             </div>
             <div className="hidden sm:block">
               <p className="font-serif text-xl font-bold text-[#8B1A4A] leading-tight">
-                Dulce Antojo
+                El Dulce Antojo
               </p>
               <p className="text-[10px] text-[#8B1A4A]/60 tracking-[0.2em] uppercase">
                 Postres Artesanales

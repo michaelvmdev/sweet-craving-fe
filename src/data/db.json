@@ -2,147 +2,147 @@
   "categories": [
     { "id": "tortas", "name": "Tortas", "icon": "🎂", "description": "Tortas artesanales para toda ocasión" },
     { "id": "queques", "name": "Queques", "icon": "🧁", "description": "Queques esponjosos y deliciosos" },
-    { "id": "pies", "name": "Pies", "icon": "🥧", "description": "Pies con rellenos cremosos y frutas frescas" },
-    { "id": "postres-frios", "name": "Postres Fríos", "icon": "🍮", "description": "Postres fríos cremosos y refrescantes" },
-    { "id": "desayunos-sorpresa", "name": "Desayunos Sorpresa", "icon": "🎁", "description": "Desayunos especiales para sorprender" },
-    { "id": "lunch-pack", "name": "Lunch Pack", "icon": "📦", "description": "Paquetes completos para compartir" }
+    { "id": "pyes", "name": "Pyes", "icon": "🥧", "description": "Pyes con rellenos cremosos y frutas frescas" },
+    { "id": "cheesecakes", "name": "Cheesecakes", "icon": "🍰", "description": "Cheesecakes cremosos y suaves" },
+    { "id": "postres-frios", "name": "Postres Fríos", "icon": "🍮", "description": "Postres fríos cremosos y deliciosos" },
+    { "id": "bocaditos", "name": "Bocaditos", "icon": "🍫", "description": "Pequeñas delicias para cada antojo" }
   ],
   "products": [
     {
       "id": 1,
       "name": "Torta de Chocolate",
-      "description": "Tres capas de bizcocho de chocolate con ganache y chantilly artesanal",
-      "price": 65,
+      "description": "Bizcocho de chocolate con ganache y cobertura artesanal de cacao",
+      "price": 30,
       "category": "tortas",
       "featured": true,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Pequeña", "Mediana", "Grande"]
     },
     {
       "id": 2,
-      "name": "Torta Tres Leches",
-      "description": "Esponjosa torta bañada en tres tipos de leche con chantilly y canela",
-      "price": 60,
+      "name": "Tres Leches",
+      "description": "Esponjosa torta bañada en tres tipos de leche con chantilly suave",
+      "price": 25,
       "category": "tortas",
       "featured": true,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Pequeña", "Mediana", "Grande"]
     },
     {
       "id": 3,
-      "name": "Torta de Fresa",
-      "description": "Bizcocho de vainilla con crema chantilly y fresas naturales frescas",
-      "price": 65,
-      "category": "tortas",
-      "featured": false,
+      "name": "Queque de Maracuyá",
+      "description": "Queque húmedo y esponjoso con aroma y sabor intenso a maracuyá",
+      "price": 25,
+      "category": "queques",
+      "featured": true,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Entero"]
     },
     {
       "id": 4,
-      "name": "Torta de Zanahoria",
-      "description": "Torta húmeda de zanahoria con frosting de queso crema y nueces",
-      "price": 55,
-      "category": "tortas",
+      "name": "Queque Marmoleado",
+      "description": "Clásico queque marmoleado de vainilla y chocolate, jugoso y esponjoso",
+      "price": 24,
+      "category": "queques",
       "featured": false,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Entero"]
     },
     {
       "id": 5,
-      "name": "Torta Red Velvet",
-      "description": "Clásico Red Velvet con crema de queso esponjosa y decoración elegante",
-      "price": 70,
-      "category": "tortas",
+      "name": "Queque de Chispas de Chocolate",
+      "description": "Suave queque de vainilla con chispas de chocolate en cada bocado",
+      "price": 24,
+      "category": "queques",
       "featured": false,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Entero"]
     },
     {
       "id": 6,
-      "name": "Queque de Naranja",
-      "description": "Queque esponjoso con aroma a naranja y glaseado cítrico casero",
-      "price": 25,
+      "name": "Queque de Vainilla",
+      "description": "Clásico queque de vainilla, ligero y esponjoso, perfecto para toda ocasión",
+      "price": 22,
       "category": "queques",
       "featured": false,
       "available": true,
-      "sizes": ["Pequeño", "Grande"]
+      "sizes": ["Entero"]
     },
     {
       "id": 7,
-      "name": "Queque Marmoleado",
-      "description": "Clásico queque marmoleado de vainilla y chocolate, jugoso y esponjoso",
-      "price": 22,
-      "category": "queques",
-      "featured": false,
+      "name": "Pye de Limón",
+      "description": "Base crocante de galleta con relleno cremoso de limón y merengue tostado",
+      "price": 25,
+      "category": "pyes",
+      "featured": true,
       "available": true,
-      "sizes": ["Pequeño", "Grande"]
+      "sizes": ["Personal", "Familiar"]
     },
     {
       "id": 8,
-      "name": "Queque de Plátano",
-      "description": "Suave y húmedo queque de plátano maduro con chips de chocolate",
-      "price": 20,
-      "category": "queques",
-      "featured": false,
+      "name": "Pye de Maracuyá",
+      "description": "Cremoso pye de maracuyá tropical con base de galleta mantecada",
+      "price": 27,
+      "category": "pyes",
+      "featured": true,
       "available": true,
-      "sizes": ["Pequeño", "Grande"]
+      "sizes": ["Personal", "Familiar"]
     },
     {
       "id": 9,
-      "name": "Queque de Limón",
-      "description": "Refrescante queque de limón con glaseado ácido y ralladura fresca",
-      "price": 22,
-      "category": "queques",
+      "name": "Pye de Manzana",
+      "description": "Clásico pye de manzana con canela, masa dorada y relleno caramelizado",
+      "price": 24,
+      "category": "pyes",
       "featured": false,
       "available": true,
-      "sizes": ["Pequeño", "Grande"]
+      "sizes": ["Personal", "Familiar"]
     },
     {
       "id": 10,
-      "name": "Pie de Limón",
-      "description": "Base crocante con relleno cremoso de limón y merengue tostado al punto",
-      "price": 45,
-      "category": "pies",
-      "featured": true,
+      "name": "Mini Pye de Limón",
+      "description": "Versión individual del clásico pye de limón, ideal para antojos personales",
+      "price": 12,
+      "category": "pyes",
+      "featured": false,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Individual"]
     },
     {
       "id": 11,
-      "name": "Pie de Manzana",
-      "description": "Clásico pie de manzana con canela, masa dorada y relleno caramelizado",
-      "price": 45,
-      "category": "pies",
+      "name": "Cheesecake de Maracuyá",
+      "description": "Cremoso cheesecake con cobertura de maracuyá fresca, ácido y delicioso",
+      "price": 28,
+      "category": "cheesecakes",
       "featured": true,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Personal", "Familiar"]
     },
     {
       "id": 12,
-      "name": "Pie de Maracuyá",
-      "description": "Cremoso pie de maracuyá tropical con base de galleta mantecada",
-      "price": 45,
-      "category": "pies",
+      "name": "Cheesecake de Fresa",
+      "description": "Cremoso cheesecake con cobertura de fresas frescas y coulis artesanal",
+      "price": 28,
+      "category": "cheesecakes",
       "featured": false,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Personal", "Familiar"]
     },
     {
       "id": 13,
-      "name": "Pie de Fresa",
-      "description": "Delicado pie de fresa con crema pastelera y fresas frescas de temporada",
-      "price": 48,
-      "category": "pies",
+      "name": "Mini Cheesecake de Maracuyá",
+      "description": "Versión individual del cheesecake de maracuyá, cremoso y refrescante",
+      "price": 12,
+      "category": "cheesecakes",
       "featured": false,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Individual"]
     },
     {
       "id": 14,
       "name": "Crema Volteada",
       "description": "Clásica crema volteada casera con caramelo dorado, suave y cremosa",
-      "price": 18,
+      "price": 22,
       "category": "postres-frios",
       "featured": true,
       "available": true,
@@ -150,19 +150,19 @@
     },
     {
       "id": 15,
-      "name": "Cheesecake de Fresa",
-      "description": "Cremoso cheesecake horneado con cobertura de fresas frescas y coulis",
-      "price": 50,
+      "name": "Brownie de Chocolate con Pecanas",
+      "description": "Brownie húmedo de chocolate con trozos de pecanas y chips de chocolate",
+      "price": 25,
       "category": "postres-frios",
       "featured": false,
       "available": true,
-      "sizes": ["Personal", "Mediana", "Grande"]
+      "sizes": ["Unidad", "Caja x4"]
     },
     {
       "id": 16,
-      "name": "Mousse de Chocolate",
-      "description": "Suave y aireado mousse de chocolate semi-amargo con crema batida",
-      "price": 15,
+      "name": "Vasitos de Chocolate con Mousse de Lúcuma",
+      "description": "Vasito de chocolate negro con mousse cremosa de lúcuma peruana",
+      "price": 10,
       "category": "postres-frios",
       "featured": false,
       "available": true,
@@ -170,77 +170,67 @@
     },
     {
       "id": 17,
-      "name": "Tiramisú",
-      "description": "Tradicional tiramisú italiano con mascarpone, espresso y cacao artesanal",
-      "price": 20,
+      "name": "Vasitos de Suspiro a la Limeña",
+      "description": "Vasito de chocolate con suspiro a la limeña, mezcla perfecta de sabores",
+      "price": 10,
       "category": "postres-frios",
-      "featured": false,
-      "available": true,
-      "sizes": ["Individual", "Familiar"]
-    },
-    {
-      "id": 18,
-      "name": "Desayuno Sorpresa Clásico",
-      "description": "Canasta con queque decorado, globos, tarjeta personalizada y bebida",
-      "price": 65,
-      "category": "desayunos-sorpresa",
-      "featured": true,
-      "available": true,
-      "sizes": ["Estándar"]
-    },
-    {
-      "id": 19,
-      "name": "Desayuno Sorpresa Premium",
-      "description": "Canasta con torta personal, bebidas, fruta fresca y decoración especial",
-      "price": 95,
-      "category": "desayunos-sorpresa",
-      "featured": true,
-      "available": true,
-      "sizes": ["Premium"]
-    },
-    {
-      "id": 20,
-      "name": "Desayuno Sorpresa Romántico",
-      "description": "Canasta especial con detalles románticos, torta corazón, rosas y más",
-      "price": 120,
-      "category": "desayunos-sorpresa",
-      "featured": false,
-      "available": true,
-      "sizes": ["Especial"]
-    },
-    {
-      "id": 21,
-      "name": "Lunch Pack Individual",
-      "description": "Porción de torta o pie, queque, bebida y postre frío del día",
-      "price": 35,
-      "category": "lunch-pack",
       "featured": false,
       "available": true,
       "sizes": ["Individual"]
     },
     {
-      "id": 22,
-      "name": "Lunch Pack Para Dos",
-      "description": "Torta mediana o 2 pies, surtido de queques y bebidas para dos personas",
-      "price": 65,
-      "category": "lunch-pack",
+      "id": 18,
+      "name": "Alfajores",
+      "description": "Galletas suaves de maicena unidas con manjar blanco y espolvoreadas con azúcar",
+      "price": 5,
+      "category": "bocaditos",
       "featured": false,
       "available": true,
-      "sizes": ["Para 2"]
+      "sizes": ["Unidad", "Caja x6", "Caja x12"]
     },
     {
-      "id": 23,
-      "name": "Lunch Pack Familiar",
-      "description": "Torta grande, surtido de postres, queques y bebidas para 6-8 personas",
-      "price": 150,
-      "category": "lunch-pack",
+      "id": 19,
+      "name": "Trufas de Chocolate",
+      "description": "Trufas artesanales de chocolate semi-amargo con cobertura de cacao",
+      "price": 5,
+      "category": "bocaditos",
       "featured": false,
       "available": true,
-      "sizes": ["Familiar (6-8 personas)"]
+      "sizes": ["Unidad", "Caja x6", "Caja x12"]
+    },
+    {
+      "id": 20,
+      "name": "Tartaleta de Fresa",
+      "description": "Base de masa quebrada con crema pastelera y fresas frescas de temporada",
+      "price": 10,
+      "category": "bocaditos",
+      "featured": false,
+      "available": true,
+      "sizes": ["Individual"]
+    },
+    {
+      "id": 21,
+      "name": "Trufas de Manjar de Maracuyá",
+      "description": "Trufas rellenas de manjar de maracuyá con cobertura de chocolate",
+      "price": 5,
+      "category": "bocaditos",
+      "featured": false,
+      "available": true,
+      "sizes": ["Unidad", "Caja x6", "Caja x12"]
+    },
+    {
+      "id": 22,
+      "name": "Trufas de Coco",
+      "description": "Trufas de chocolate con ralladura de coco, suaves y deliciosamente tropicales",
+      "price": 5,
+      "category": "bocaditos",
+      "featured": false,
+      "available": true,
+      "sizes": ["Unidad", "Caja x6", "Caja x12"]
     }
   ],
   "about": {
-    "story": "Dulce Antojo nació de la pasión por los sabores artesanales y el deseo de endulzar cada momento especial. Cada postre es preparado con ingredientes frescos seleccionados, amor y dedicación para que cada bocado sea una experiencia única e inolvidable.",
+    "story": "El Dulce Antojo nació de la pasión por los sabores artesanales y el deseo de endulzar cada momento especial. Cada postre es preparado con ingredientes frescos seleccionados, amor y dedicación para que cada bocado sea una experiencia única e inolvidable.",
     "mission": "Brindar postres artesanales de la más alta calidad, elaborados con ingredientes frescos y técnicas tradicionales, para endulzar los momentos más especiales de nuestros clientes.",
     "values": [
       { "icon": "🌿", "title": "Ingredientes Frescos", "description": "Seleccionamos los mejores ingredientes naturales para cada creación" },
@@ -253,9 +243,9 @@
     "whatsapp": "51967636632",
     "whatsappDisplay": "967 636 632",
     "social": {
-      "facebook": "dulceantojo",
-      "instagram": "dulceantojo",
-      "tiktok": "dulceantojo"
+      "facebook": "eldulceantojo",
+      "instagram": "eldulceantojo",
+      "tiktok": "eldulceantojo"
     },
     "hours": [
       { "day": "Lunes - Viernes", "time": "9:00 am - 7:00 pm" },

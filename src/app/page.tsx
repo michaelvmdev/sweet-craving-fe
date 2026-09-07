@@ -7,19 +7,19 @@ const WA_BASE = "https://wa.me/51967636632";
 const CATEGORY_COLORS: Record<string, string> = {
   tortas: "from-rose-100 to-pink-50",
   queques: "from-pink-100 to-rose-50",
-  pies: "from-orange-100 to-amber-50",
-  "postres-frios": "from-yellow-50 to-amber-50",
-  "desayunos-sorpresa": "from-purple-100 to-pink-50",
-  "lunch-pack": "from-teal-50 to-emerald-50",
+  pyes: "from-orange-100 to-amber-50",
+  cheesecakes: "from-yellow-100 to-amber-50",
+  "postres-frios": "from-yellow-50 to-orange-50",
+  bocaditos: "from-purple-100 to-pink-50",
 };
 
 const CATEGORY_ICONS: Record<string, string> = {
   tortas: "🎂",
   queques: "🧁",
-  pies: "🥧",
+  pyes: "🥧",
+  cheesecakes: "🍰",
   "postres-frios": "🍮",
-  "desayunos-sorpresa": "🎁",
-  "lunch-pack": "📦",
+  bocaditos: "🍫",
 };
 
 export default function HomePage() {
@@ -69,7 +69,7 @@ export default function HomePage() {
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-rose-200 ring-offset-4">
                 <Image
                   src="/logo.jpg"
-                  alt="Dulce Antojo - Postres Artesanales"
+                  alt="El Dulce Antojo - Postres Artesanales"
                   fill
                   className="object-cover"
                   priority
@@ -172,7 +172,7 @@ export default function HomePage() {
               Nuestra Promesa
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#2d1b1b]">
-              ¿Por qué elegir Dulce Antojo?
+              ¿Por qué elegir El Dulce Antojo?
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

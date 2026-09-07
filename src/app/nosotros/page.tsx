@@ -6,7 +6,7 @@ import db from "@/data/db.json";
 export const metadata: Metadata = {
   title: "Quiénes Somos",
   description:
-    "Conoce la historia de Dulce Antojo, nuestra misión y los valores que guían cada postre artesanal que elaboramos.",
+    "Conoce la historia de El Dulce Antojo, nuestra misión y los valores que guían cada postre artesanal que elaboramos.",
 };
 
 export default function NosotrosPage() {
@@ -36,7 +36,7 @@ export default function NosotrosPage() {
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden shadow-xl ring-4 ring-rose-100 ring-offset-4">
                 <Image
                   src="/logo.jpg"
-                  alt="Dulce Antojo"
+                  alt="El Dulce Antojo"
                   fill
                   className="object-cover"
                 />

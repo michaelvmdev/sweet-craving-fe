@@ -14,13 +14,13 @@ export default function Footer() {
               <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white/30">
                 <Image
                   src="/logo.jpg"
-                  alt="Dulce Antojo"
+                  alt="El Dulce Antojo"
                   fill
                   className="object-cover"
                 />
               </div>
               <div>
-                <p className="font-serif text-xl font-bold">Dulce Antojo</p>
+                <p className="font-serif text-xl font-bold">El Dulce Antojo</p>
                 <p className="text-[10px] text-white/60 tracking-[0.2em] uppercase">
                   Postres Artesanales
                 </p>
@@ -74,29 +74,29 @@ export default function Footer() {
                 </p>
                 <div className="flex items-center justify-center md:justify-start gap-3">
                   <a
-                    href="https://facebook.com/dulceantojo"
+                    href="https://facebook.com/eldulceantojo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors"
-                    aria-label="Facebook de Dulce Antojo"
+                    aria-label="Facebook de El Dulce Antojo"
                   >
                     <FacebookIcon className="w-4 h-4" />
                   </a>
                   <a
-                    href="https://instagram.com/dulceantojo"
+                    href="https://instagram.com/eldulceantojo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors"
-                    aria-label="Instagram de Dulce Antojo"
+                    aria-label="Instagram de El Dulce Antojo"
                   >
                     <InstagramIcon className="w-4 h-4" />
                   </a>
                   <a
-                    href="https://tiktok.com/@dulceantojo"
+                    href="https://tiktok.com/@eldulceantojo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors"
-                    aria-label="TikTok de Dulce Antojo"
+                    aria-label="TikTok de El Dulce Antojo"
                   >
                     <TikTokIcon className="w-4 h-4" />
                   </a>
@@ -108,7 +108,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-white/50 text-xs">
-            © {year} Dulce Antojo. Todos los derechos reservados.
+            © {year} El Dulce Antojo. Todos los derechos reservados.
           </p>
           <p className="text-white/40 text-xs">Postres Artesanales con ♥ Amor</p>
         </div>
