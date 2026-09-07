@@ -28,16 +28,15 @@ export default function ProductosPage() {
                 artesanales. Elige tu favorito y pídelo por WhatsApp.
               </p>
             </div>
-            <div className="shrink-0 w-full max-w-sm lg:max-w-xs xl:max-w-sm">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl ring-2 ring-rose-100">
-                <Image
-                  src="/productos.jpg"
-                  alt="Postres El Dulce Antojo"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+            <div className="shrink-0 w-full max-w-xs">
+              <Image
+                src="/productos.jpg"
+                alt="Menú El Dulce Antojo"
+                width={800}
+                height={1200}
+                className="w-full h-auto rounded-2xl shadow-xl ring-2 ring-rose-100"
+                priority
+              />
             </div>
           </div>
         </div>

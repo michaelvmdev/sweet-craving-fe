@@ -35,7 +35,7 @@ export default function NosotrosPage() {
             <div className="shrink-0">
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden shadow-xl ring-4 ring-rose-100 ring-offset-4">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo.png"
                   alt="El Dulce Antojo"
                   fill
                   className="object-cover"

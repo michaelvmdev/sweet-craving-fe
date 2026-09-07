@@ -24,7 +24,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-rose-100">
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="El Dulce Antojo"
                 fill
                 className="object-cover"

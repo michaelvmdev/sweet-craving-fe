@@ -66,15 +66,14 @@ export default function HomePage() {
 
             {/* Logo */}
             <div className="shrink-0 flex items-center justify-center">
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-rose-200 ring-offset-4">
-                <Image
-                  src="/logo.jpg"
-                  alt="El Dulce Antojo - Postres Artesanales"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="El Dulce Antojo - Postres Artesanales"
+                width={420}
+                height={420}
+                className="w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 drop-shadow-2xl"
+                priority
+              />
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white/30">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo.png"
                   alt="El Dulce Antojo"
                   fill
                   className="object-cover"
