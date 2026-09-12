@@ -131,6 +131,9 @@ function ProductCard({ product }: { product: Product }) {
             Oferta
           </span>
         )}
+        <span className="absolute bottom-2 left-2 text-[9px] text-white/90 bg-black/40 px-2 py-0.5 rounded z-10">
+          Imagen referencial
+        </span>
       </div>
 
       {/* ── Contenido ── */}

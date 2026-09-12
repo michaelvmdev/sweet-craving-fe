@@ -174,6 +174,9 @@ export default async function HomePage() {
                         Oferta
                       </span>
                     )}
+                    <span className="absolute bottom-2 left-2 text-[9px] text-white/90 bg-black/40 px-2 py-0.5 rounded z-10">
+                      Imagen referencial
+                    </span>
                   </div>
                   <div className="p-5">
                     <h3 className="font-serif text-base font-semibold text-[#2d1b1b] mb-1">
