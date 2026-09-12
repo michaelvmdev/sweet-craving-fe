@@ -41,7 +41,8 @@ export default async function HomePage() {
         p.product_id          AS id,
         p.product_name        AS name,
         p.product_summary     AS summary,
-        p.product_unit_price  AS price,
+        p.product_unit_price        AS price,
+        p.product_promotional_price AS promotional_price,
         c.category_slug,
         c.category_name,
         c.category_icon,
@@ -177,11 +178,24 @@ export default async function HomePage() {
                       {product.summary}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-[#8B1A4A] text-sm">
-                        {product.price != null
-                          ? `Desde S/ ${product.price}`
-                          : "Consultar"}
-                      </span>
+                      <div className="flex flex-col">
+                        {product.promotional_price != null ? (
+                          <>
+                            <span className="text-xs text-gray-400 line-through leading-tight">
+                              S/ {product.price}
+                            </span>
+                            <span className="font-bold text-[#8B1A4A] text-sm leading-tight">
+                              Desde S/ {product.promotional_price}
+                            </span>
+                          </>
+                        ) : (
+                          <span className="font-bold text-[#8B1A4A] text-sm">
+                            {product.price != null
+                              ? `Desde S/ ${product.price}`
+                              : "Consultar"}
+                          </span>
+                        )}
+                      </div>
                       <a
                         href={`${WA_BASE}?text=${encodeURIComponent(
                           `Hola! Me interesa el ${product.name}`

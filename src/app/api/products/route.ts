@@ -25,6 +25,7 @@ export async function GET(request: Request) {
        p.product_name                                                        AS name,
        p.product_summary                                                     AS summary,
        p.product_unit_price                                                  AS price,
+       p.product_promotional_price                                           AS promotional_price,
        c.category_slug,
        c.category_name,
        c.category_icon,

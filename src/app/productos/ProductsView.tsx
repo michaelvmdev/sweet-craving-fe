@@ -39,6 +39,7 @@ interface Product {
   name: string;
   summary: string;
   price: number | null;
+  promotional_price: number | null;
   category_slug: string;
   category_name: string;
   category_icon: string;
@@ -155,9 +156,22 @@ function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-          <span className="font-bold text-[#8B1A4A]">
-            {product.price != null ? `Desde S/ ${product.price}` : "Consultar"}
-          </span>
+          <div className="flex flex-col">
+            {product.promotional_price != null ? (
+              <>
+                <span className="text-xs text-gray-400 line-through leading-tight">
+                  S/ {product.price}
+                </span>
+                <span className="font-bold text-[#8B1A4A] text-base leading-tight">
+                  Desde S/ {product.promotional_price}
+                </span>
+              </>
+            ) : (
+              <span className="font-bold text-[#8B1A4A]">
+                {product.price != null ? `Desde S/ ${product.price}` : "Consultar"}
+              </span>
+            )}
+          </div>
           <a
             href={`${WA_BASE}?text=${encodeURIComponent(
               `Hola! Quisiera pedir: ${product.name}`
