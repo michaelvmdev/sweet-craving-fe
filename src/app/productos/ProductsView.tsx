@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -74,6 +75,7 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
       {/* ── Carrusel ── */}
+      <Link href={`/productos/${product.slug}`} className="block">
       <div className={`relative h-48 overflow-hidden bg-gradient-to-br ${gradient}`}>
         <Image
           src={imgs[idx]}
@@ -135,6 +137,7 @@ function ProductCard({ product }: { product: Product }) {
           Imagen referencial
         </span>
       </div>
+      </Link>
 
       {/* ── Contenido ── */}
       <div className="p-5 flex flex-col flex-1">
@@ -143,9 +146,11 @@ function ProductCard({ product }: { product: Product }) {
             <span>{product.category_icon}</span>
             {product.category_name}
           </p>
-          <h3 className="font-serif text-base font-semibold text-[#2d1b1b] mb-2">
-            {product.name}
-          </h3>
+          <Link href={`/productos/${product.slug}`}>
+            <h3 className="font-serif text-base font-semibold text-[#2d1b1b] mb-2 hover:text-[#8B1A4A] transition-colors">
+              {product.name}
+            </h3>
+          </Link>
           <p className="text-gray-500 text-xs leading-relaxed mb-3 line-clamp-2">
             {product.summary}
           </p>

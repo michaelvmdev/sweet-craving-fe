@@ -43,6 +43,7 @@ export default async function HomePage() {
         p.product_summary     AS summary,
         p.product_unit_price        AS price,
         p.product_promotional_price AS promotional_price,
+        p.product_slug              AS slug,
         c.category_slug,
         c.category_name,
         c.category_icon,
@@ -161,6 +162,7 @@ export default async function HomePage() {
                   key={product.id}
                   className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100"
                 >
+                  <Link href={`/productos/${product.slug}`} className="block">
                   <div className={`relative h-44 bg-gradient-to-br ${gradient}`}>
                     <Image
                       src={product.cover_image ?? "/product_image_not_found.webp"}
@@ -178,6 +180,7 @@ export default async function HomePage() {
                       Imagen referencial
                     </span>
                   </div>
+                  </Link>
                   <div className="p-5">
                     <h3 className="font-serif text-base font-semibold text-[#2d1b1b] mb-1">
                       {product.name}
