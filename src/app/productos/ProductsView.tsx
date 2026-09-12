@@ -126,6 +126,11 @@ function ProductCard({ product }: { product: Product }) {
             Popular
           </span>
         )}
+        {product.promotional_price != null && (
+          <span className="absolute top-3 right-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide z-10">
+            Oferta
+          </span>
+        )}
       </div>
 
       {/* ── Contenido ── */}
