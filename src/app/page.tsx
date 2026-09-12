@@ -1,29 +1,70 @@
 import Image from "next/image";
 import Link from "next/link";
-import db from "@/data/db.json";
+import pool from "@/lib/db";
 
 const WA_BASE = "https://wa.me/51967636632";
 
-const CATEGORY_COLORS: Record<string, string> = {
-  tortas: "from-rose-100 to-pink-50",
-  queques: "from-pink-100 to-rose-50",
-  pyes: "from-orange-100 to-amber-50",
-  cheesecakes: "from-yellow-100 to-amber-50",
-  "postres-frios": "from-yellow-50 to-orange-50",
-  bocaditos: "from-purple-100 to-pink-50",
-};
+const COLOR_PALETTE = [
+  "from-rose-100 to-pink-50",
+  "from-pink-100 to-rose-50",
+  "from-orange-100 to-amber-50",
+  "from-yellow-100 to-amber-50",
+  "from-yellow-50 to-orange-50",
+  "from-purple-100 to-pink-50",
+  "from-green-100 to-emerald-50",
+  "from-amber-100 to-yellow-50",
+  "from-cyan-100 to-blue-50",
+  "from-violet-100 to-purple-50",
+  "from-teal-100 to-green-50",
+  "from-lime-100 to-green-50",
+  "from-fuchsia-100 to-pink-50",
+  "from-sky-100 to-cyan-50",
+  "from-indigo-100 to-violet-50",
+  "from-red-100 to-rose-50",
+  "from-emerald-100 to-teal-50",
+  "from-orange-50 to-amber-50",
+];
 
-const CATEGORY_ICONS: Record<string, string> = {
-  tortas: "🎂",
-  queques: "🧁",
-  pyes: "🥧",
-  cheesecakes: "🍰",
-  "postres-frios": "🍮",
-  bocaditos: "🍫",
-};
+const ABOUT_VALUES = [
+  { icon: "🌿", title: "Ingredientes Frescos",  description: "Seleccionamos los mejores ingredientes naturales para cada creación" },
+  { icon: "👐", title: "Hecho a Mano",          description: "Cada postre es elaborado artesanalmente con dedicación y cuidado" },
+  { icon: "❤️",  title: "Con Amor",              description: "Ponemos amor en cada receta para que sientas la diferencia" },
+  { icon: "✨",  title: "Personalizado",          description: "Diseñamos postres únicos para tus momentos más especiales" },
+];
 
-export default function HomePage() {
-  const featuredProducts = db.products.filter((p) => p.featured).slice(0, 4);
+export default async function HomePage() {
+  const [featuredRes, categoriesRes] = await Promise.all([
+    pool.query(`
+      SELECT
+        p.product_id          AS id,
+        p.product_name        AS name,
+        p.product_summary     AS summary,
+        p.product_unit_price  AS price,
+        c.category_slug,
+        c.category_name,
+        c.category_icon,
+        c.sort_order          AS category_order,
+        (
+          SELECT url_image FROM product_images
+          WHERE product_id = p.product_id
+          ORDER BY sort_order LIMIT 1
+        )                     AS cover_image
+      FROM products p
+      JOIN categories c ON c.category_id = p.category_id
+      WHERE p.product_active = TRUE AND p.featured = TRUE
+      ORDER BY p.sort_order
+      LIMIT 4
+    `),
+    pool.query(`
+      SELECT category_slug AS id, category_name AS name, category_icon AS icon
+      FROM categories
+      WHERE category_active = TRUE
+      ORDER BY sort_order
+    `),
+  ]);
+
+  const featuredProducts = featuredRes.rows;
+  const categories       = categoriesRes.rows;
 
   return (
     <>
@@ -31,7 +72,6 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-[#FDF6F0] via-white to-rose-50 py-16 lg:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
-            {/* Text */}
             <div className="flex-1 text-center lg:text-left">
               <span className="inline-flex items-center gap-2 bg-rose-100 text-[#8B1A4A] text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
                 ♥ Postres Artesanales
@@ -64,7 +104,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Logo */}
             <div className="shrink-0 flex items-center justify-center">
               <Image
                 src="/logo.png"
@@ -84,9 +123,9 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 gap-4 text-center text-white">
             {[
-              { value: "100%", label: "Artesanal" },
-              { value: "6+", label: "Categorías" },
-              { value: "★ 5.0", label: "Calidad" },
+              { value: "100%",    label: "Artesanal" },
+              { value: `${categories.length}+`, label: "Categorías" },
+              { value: "★ 5.0",  label: "Calidad" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="font-serif text-2xl sm:text-3xl font-bold">{stat.value}</p>
@@ -111,31 +150,40 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => {
-              const gradient = CATEGORY_COLORS[product.category] ?? "from-gray-100 to-gray-50";
-              const icon = CATEGORY_ICONS[product.category] ?? "🍰";
+              const gradient =
+                COLOR_PALETTE[(product.category_order - 1) % COLOR_PALETTE.length] ??
+                "from-rose-50 to-pink-50";
               return (
                 <div
                   key={product.id}
                   className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100"
                 >
-                  <div className={`h-44 bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                    <span className="text-6xl group-hover:scale-110 transition-transform duration-300">
-                      {icon}
-                    </span>
+                  <div className={`relative h-44 bg-gradient-to-br ${gradient}`}>
+                    <Image
+                      src={product.cover_image ?? "/product_image_not_found.webp"}
+                      alt={product.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 25vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   <div className="p-5">
                     <h3 className="font-serif text-base font-semibold text-[#2d1b1b] mb-1">
                       {product.name}
                     </h3>
                     <p className="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-2">
-                      {product.description}
+                      {product.summary}
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-[#8B1A4A] text-sm">
-                        Desde S/ {product.price}
+                        {product.price != null
+                          ? `Desde S/ ${product.price}`
+                          : "Consultar"}
                       </span>
                       <a
-                        href={`${WA_BASE}?text=${encodeURIComponent(`Hola! Me interesa el ${product.name}`)}`}
+                        href={`${WA_BASE}?text=${encodeURIComponent(
+                          `Hola! Me interesa el ${product.name}`
+                        )}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs bg-[#25D366] text-white px-3 py-1.5 rounded-full hover:bg-[#1da851] transition-colors font-medium"
@@ -175,7 +223,7 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {db.about.values.map((v) => (
+            {ABOUT_VALUES.map((v) => (
               <div
                 key={v.title}
                 className="bg-white rounded-2xl p-7 text-center shadow-sm hover:shadow-md transition-shadow border border-rose-50"
@@ -203,7 +251,7 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {db.categories.map((cat) => (
+            {categories.map((cat) => (
               <Link
                 key={cat.id}
                 href={`/productos?categoria=${cat.id}`}
@@ -232,7 +280,9 @@ export default function HomePage() {
             ayudamos a elegir.
           </p>
           <a
-            href={`${WA_BASE}?text=${encodeURIComponent("Hola! Quiero hacer un pedido especial.")}`}
+            href={`${WA_BASE}?text=${encodeURIComponent(
+              "Hola! Quiero hacer un pedido especial."
+            )}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#1da851] transition-colors shadow-lg"

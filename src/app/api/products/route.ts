@@ -1,39 +1,53 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import { readFileSync } from "fs";
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  featured: boolean;
-  available: boolean;
-  sizes: string[];
-}
-
-interface DB {
-  products: Product[];
-}
+import pool from "@/lib/db";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const category = searchParams.get("category");
   const featured = searchParams.get("featured");
 
-  const filePath = path.join(process.cwd(), "src", "data", "db.json");
-  const db: DB = JSON.parse(readFileSync(filePath, "utf8"));
-
-  let products = db.products.filter((p) => p.available);
+  const conditions: string[] = ["p.product_active = TRUE"];
+  const params: unknown[] = [];
 
   if (category) {
-    products = products.filter((p) => p.category === category);
+    params.push(category);
+    conditions.push(`c.category_slug = $${params.length}`);
   }
-
   if (featured === "true") {
-    products = products.filter((p) => p.featured);
+    conditions.push("p.featured = TRUE");
   }
 
-  return NextResponse.json(products);
+  const where = `WHERE ${conditions.join(" AND ")}`;
+
+  const { rows } = await pool.query(
+    `SELECT
+       p.product_id                                                          AS id,
+       p.product_name                                                        AS name,
+       p.product_summary                                                     AS summary,
+       p.product_unit_price                                                  AS price,
+       c.category_slug,
+       c.category_name,
+       c.category_icon,
+       c.sort_order                                                          AS category_order,
+       p.featured,
+       p.product_slug                                                        AS slug,
+       p.sort_order,
+       (
+         SELECT COALESCE(array_agg(url_image ORDER BY sort_order), ARRAY[]::text[])
+         FROM   product_images
+         WHERE  product_id = p.product_id
+       )                                                                     AS images,
+       (
+         SELECT COALESCE(array_agg(size_label ORDER BY sort_order), ARRAY[]::text[])
+         FROM   product_sizes
+         WHERE  product_id = p.product_id
+       )                                                                     AS sizes
+     FROM products p
+     JOIN categories c ON c.category_id = p.category_id
+     ${where}
+     ORDER BY c.sort_order, p.sort_order`,
+    params
+  );
+
+  return NextResponse.json(rows);
 }
