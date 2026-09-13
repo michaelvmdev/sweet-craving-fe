@@ -13,7 +13,7 @@ const pool: Pool =
     max: 10,
     idleTimeoutMillis: 30_000,
     connectionTimeoutMillis: 5_000,
-    options: "-c search_path=db_sweet_craving",
+    options: "-c search_path=db_my_sweet_craving",
   });
 
 if (process.env.NODE_ENV !== "production") {

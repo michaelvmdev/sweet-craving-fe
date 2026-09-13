@@ -31,7 +31,7 @@ export default function ProductosPage() {
             <div className="shrink-0 w-full max-w-xs">
               <Image
                 src="/productos.jpg"
-                alt="Menú El Dulce Antojo"
+                alt="Menú Mi Dulce Antojo"
                 width={800}
                 height={1200}
                 className="w-full h-auto rounded-2xl shadow-xl ring-2 ring-rose-100"

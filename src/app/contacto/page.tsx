@@ -4,7 +4,7 @@ import db from "@/data/db.json";
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Contáctanos por WhatsApp para hacer tus pedidos de postres artesanales El Dulce Antojo. Atención personalizada para cada ocasión.",
+    "Contáctanos por WhatsApp para hacer tus pedidos de postres artesanales Mi Dulce Antojo. Atención personalizada para cada ocasión.",
 };
 
 export default function ContactoPage() {

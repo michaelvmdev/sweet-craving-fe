@@ -21,8 +21,8 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: {
-    default: "El Dulce Antojo | Postres Artesanales",
-    template: "%s | El Dulce Antojo",
+    default: "Mi Dulce Antojo | Postres Artesanales",
+    template: "%s | Mi Dulce Antojo",
   },
   description:
     "Postres artesanales elaborados con amor. Tortas, queques, pyes de limón, cheesecakes, crema volteada, bocaditos y más. Pedidos por WhatsApp.",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "pastelería",
   ],
   openGraph: {
-    title: "El Dulce Antojo | Postres Artesanales",
+    title: "Mi Dulce Antojo | Postres Artesanales",
     description: "Postres artesanales elaborados con amor para endulzar tus momentos especiales.",
     type: "website",
     locale: "es_PE",

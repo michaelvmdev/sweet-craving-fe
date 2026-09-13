@@ -111,7 +111,7 @@ export default async function HomePage() {
             <div className="shrink-0 flex items-center justify-center">
               <Image
                 src="/logo.png"
-                alt="El Dulce Antojo - Postres Artesanales"
+                alt="Mi Dulce Antojo - Postres Artesanales"
                 width={420}
                 height={420}
                 className="w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 drop-shadow-2xl"
@@ -246,7 +246,7 @@ export default async function HomePage() {
               Nuestra Promesa
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#2d1b1b]">
-              ¿Por qué elegir El Dulce Antojo?
+              ¿Por qué elegir Mi Dulce Antojo?
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

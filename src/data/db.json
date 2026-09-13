@@ -230,7 +230,7 @@
     }
   ],
   "about": {
-    "story": "El Dulce Antojo nació de la pasión por los sabores artesanales y el deseo de endulzar cada momento especial. Cada postre es preparado con ingredientes frescos seleccionados, amor y dedicación para que cada bocado sea una experiencia única e inolvidable.",
+    "story": "Mi Dulce Antojo nació de la pasión por los sabores artesanales y el deseo de endulzar cada momento especial. Cada postre es preparado con ingredientes frescos seleccionados, amor y dedicación para que cada bocado sea una experiencia única e inolvidable.",
     "mission": "Brindar postres artesanales de la más alta calidad, elaborados con ingredientes frescos y técnicas tradicionales, para endulzar los momentos más especiales de nuestros clientes.",
     "values": [
       { "icon": "🌿", "title": "Ingredientes Frescos", "description": "Seleccionamos los mejores ingredientes naturales para cada creación" },
@@ -243,9 +243,9 @@
     "whatsapp": "51967636632",
     "whatsappDisplay": "967 636 632",
     "social": {
-      "facebook": "eldulceantojo",
-      "instagram": "eldulceantojo",
-      "tiktok": "eldulceantojo"
+      "facebook": "midulceantojo",
+      "instagram": "midulceantojo",
+      "tiktok": "midulceantojo"
     },
     "hours": [
       { "day": "Lunes - Viernes", "time": "9:00 am - 7:00 pm" },
